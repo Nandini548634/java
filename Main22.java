@@ -1,0 +1,31 @@
+abstract class BankAccount {
+
+    abstract double calculateInterest();
+
+    void displayAccountType() {
+        System.out.println("Bank Account Details");
+    }
+}
+
+class SavingsAccount extends BankAccount {
+
+    double balance;
+
+    @Override
+    double calculateInterest() {
+        return balance * 0.05;
+    }
+}
+
+public class Main22 {
+    public static void main(String[] args) {
+
+        SavingsAccount account = new SavingsAccount();
+
+        account.balance = 50000;
+
+        account.displayAccountType();
+
+        System.out.println("Calculated Interest: " + account.calculateInterest());
+    }
+}
